@@ -1,16 +1,198 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Веб-технології  та веб-дизайн</title>
+    <meta charset="UTF-8">
+    <title>Lab8</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./js/snippets.js">
+    <style>
+        /* Додано CSS для фіксації таблиці */
+        .third {
+            position: sticky;
+            top: 0;
+            z-index: 10; /* Залишає таблицю на передньому плані */
+            margin-top: -30px; /* Переміщає блок трохи вище */
+        }
+
+        /* Додано трохи більше простору для акордеона */
+        .second {
+            margin-top: 40px;
+        }
+
+        /* Можна додати стилі для акордеона, щоб він не перекривав таблицю */
+        .accordion-button {
+            background: rgba(199, 140, 140, 0.2);
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <h1>Лабораторна №9</h1>
+ 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Головна</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Головна</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Посилання</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Розкривний список
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Дія</a></li>
+                  <li><a class="dropdown-item" href="#">Ще одна дія</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Ще щось</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Контакти</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Пошук" aria-label="Пошук">
+              <button class="btn btn-outline-success" type="submit">Пошук</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <div class = button>
+      <button type="button" class="btn btn-primary" id="liveToastBtn">Показати активне сповіщення</button>
+
+     <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <img src="./beaker-svgrepo-com.svg" class="rounded me-2" alt="img">
+            <strong class="me-auto">Bootstrap</strong>
+            <small>11 mins ago</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body autohide: false">
+            Hello, world! This is a toast message.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+        <h1>Регістр</h1>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">@</span>
+            <input type="text" class="form-control" placeholder="Ім'я користувача" aria-label="Ім'я користувача" aria-describedby="basic-addon1">
+          </div>
+          
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Адреса пошти" aria-label="Адреса пошти" aria-describedby="basic-addon2">
+            <span class="input-group-text" id="basic-addon2">@gmail.com</span>
+          </div>
+          
+          <label for="basic-url" class="form-label">Ваш персоналізований URL</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+          </div>
+          
+          <div class="input-group mb-3">
+            <span class="input-group-text">$</span>
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <span class="input-group-text">.00</span>
+          </div>
+          
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Ім'я користувача" aria-label="Ім'я користувача">
+            <span class="input-group-text">@</span>
+            <input type="text" class="form-control" placeholder="Сервер" aria-label="Сервер">
+          </div>
+          
+          <div class="input-group">
+            <span class="input-group-text">Введіть текст</span>
+            <textarea class="form-control" aria-label="With textarea"></textarea>
+          </div>
+     </div>
+
+<div class="second"><div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background: rgba(199, 140, 140, 0.2)">
+          Секція №1
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>Це текст першого елемента вмісту акордеона.</strong> За замовчуванням він прихований, поки плагін не додасть відповідні класи, які ми використовуємо для стилізації кожного елемента. Ці класи керують загальним виглядом, а також показом і приховуванням через CSS-переходи. Ви можете змінювати це за допомогою власного CSS або перевизначення змінних за замовчуванням. Також варто зазначити, що будь-який HTML може бути всередині <code>.accordion-body</code>, хоча перехід обмежує переповнення.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="background: rgba(199, 140, 140, 0.2)">
+          Секція №2
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>Це текст другого елемента вмісту акордеона.</strong> За замовчуванням він прихований, поки плагін не додасть відповідні класи, які ми використовуємо для стилізації кожного елемента. Ці класи керують загальним виглядом, а також показом і приховуванням через CSS-переходи. Ви можете змінювати це за допомогою власного CSS або перевизначення змінних за замовчуванням. Також варто зазначити, що будь-який HTML може бути всередині <code>.accordion-body</code>, хоча перехід обмежує переповнення.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="background: rgba(199, 140, 140, 0.2)">
+          Секція №3
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>Це текст третього елемента вмісту акордеона.</strong> За замовчуванням він прихований, поки плагін не додасть відповідні класи, які ми використовуємо для стилізації кожного елемента. Ці класи керують загальним виглядом, а також показом і приховуванням через CSS-переходи. Ви можете змінювати це за допомогою власного CSS або перевизначення змінних за замовчуванням. Також варто зазначити, що будь-який HTML може бути всередині <code>.accordion-body</code>, хоча перехід обмежує переповнення.
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="pa">
-    <p><strong>Мета роботи:</strong> Ознайомитися з основними етапами тестування веб-сайту</p>
+
+
+<div class="third">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Ім'я</th>
+                <th scope="col">Фамілія</th>
+                <th scope="col">Вузол</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Лев</td>
+                <td>Омельченко</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Яюс</td>
+                <td>Ростислав</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Олег Павлеса</td>
+                <td>@twitter</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
+
+    <!--scripts-->
+    <script src="./js/bootstrap.js"></script>
 </body>
 </html>
+ф
