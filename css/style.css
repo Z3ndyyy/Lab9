@@ -1,0 +1,43 @@
+body{
+    background-color: darkblue;
+}
+
+
+.container{
+
+    width:864px;
+    background: rgba(199, 140, 140, 0.2);
+    margin: auto;
+}
+
+
+
+.btn.btn-outline-success {
+    color: #b4eb35; /* Червоний колір тексту */
+}
+
+
+.btn.btn-outline-success:hover {
+    background: rgba(199, 140, 140, 0.2);
+}
+
+.second{
+    
+    height: auto;
+    width: 690px;
+    position: relative;
+    padding: 30px;
+}
+
+
+.third{
+    background: rgba(199, 140, 140, 0.2);
+    height: auto;
+    width: 750px;
+    position: relative;
+    padding: 60px;
+    margin: 60px;
+    left: 680px;
+    top: -280px;
+}
+
